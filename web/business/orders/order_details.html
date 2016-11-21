@@ -1,0 +1,25 @@
+<div class="modal-header">
+    <h3 class="modal-title">{{modalTitle}}</h3>
+</div>
+<div class="modal-body">
+    <form role="form">
+        <div class="form-group">
+            <label for="orderNo">OrderNo</label>
+            <input type="text" class="form-control" id="orderNo" ng-model="data.orderNo"/>
+        </div>
+        <div class="form-group">
+            <label for="memberName">UserName</label>
+            <input type="text" class="form-control" id="memberName" ng-model="data.memberName"/>
+        </div>
+        <div class="form-group">
+            <label for="price">Price</label>
+            <input type="text" class="form-control" id="price" ng-model="data.price"/>
+        </div>
+    </form>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" ng-click="ok()">
+        确认
+    </button>
+    <button class="btn btn-warning" ng-click="cancel()">退出</button>
+</div>

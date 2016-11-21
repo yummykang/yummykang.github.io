@@ -1,0 +1,24 @@
+<div class="col-lg-2" style="background-color: #252525;height: 1000px">
+    <aside class="sidebar">
+        <nav class="sidebar-nav">
+            <ul class="metismenu" id="menu">
+                <li ng-repeat="menu in menus">
+                    <a href="#" aria-expanded="false">{{menu.text}} <span ng-show="menu.subMenus.length" class="glyphicon arrow"></span></a>
+                    <ul aria-expanded="false" class="collapse" ng-repeat="subMenu in menu.subMenus">
+                        <li>
+                            <a ng-href="{{subMenu.url}}">{{subMenu.text}} <span ng-show="subMenu.thdMenus.length" class="glyphicon arrow"></span></a>
+                            <ul aria-expanded="false" class="collapse" ng-repeat="thdMenu in subMenu.thdMenus">
+                                <li><a ng-href="{{thdMenu.url}}">{{thdMenu.text}}</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+</div>
+<script>
+    $(function () {
+        $('#menu').metisMenu({ toggle: false });
+    });
+</script>
