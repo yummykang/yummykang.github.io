@@ -4,22 +4,22 @@ scotchApp.config(["$routeProvider", function ($routeProvider) {
     $routeProvider.when('/', {
         templateUrl: 'index.html'
     }).when('/orders', {
-        templateUrl: 'business/orders/orders.html'
+        templateUrl: 'web/business/orders/orders.html'
     });
 }]);
 
 scotchApp.controller('scotchController', function ($scope, $http, $modal) {
-    $http.get("json/menu.json").success(function (data) {
+    $http.get("web/json/menu.json").success(function (data) {
         $scope.menus = data;
     });
 
-    $http.get("json/orders.json").success(function (data) {
+    $http.get("web/json/orders.json").success(function (data) {
         $scope.orders = data;
     });
 
     $scope.open = function (order) {
         var modalInstance = $modal.open({
-            templateUrl: 'business/orders/order_details.html',
+            templateUrl: 'web/business/orders/order_details.html',
             controller: 'modalController',
             resolve : {
                 order : function() {return order}
